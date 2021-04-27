@@ -204,6 +204,13 @@ export default Component.extend({
   */
   onResize: null,
 
+  /**
+		An action that is sent when columns are resizing
+    @argument onResizing
+    @type Action?
+	 */
+	onResizing: null,
+
   'data-test-row-count': readOnly('wrappedRows.length'),
 
   init() {
@@ -227,6 +234,7 @@ export default Component.extend({
     this.columnTree = ColumnTree.create({
       onReorder: this.onReorder?.bind(this),
       onResize: this.onResize?.bind(this),
+      onResizing: this.onResizing?.bind(this),
       columnMetaCache: this.columnMetaCache,
       containerWidthAdjustment: this.containerWidthAdjustment,
     });

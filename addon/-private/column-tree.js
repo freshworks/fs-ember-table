@@ -1038,6 +1038,8 @@ export default EmberObject.extend({
     set(node, 'width', newWidth);
 
     this.ensureWidthConstraint.call(this);
+
+    this.onResizing?.(get(node, 'column'));
   },
 
   endResize(node) {
