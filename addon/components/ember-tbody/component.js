@@ -121,7 +121,7 @@ export default Component.extend({
     @argument estimateRowHeight
     @type number? (30)
   */
-  estimateRowHeight: defaultTo(30),
+  estimateRowHeight: defaultTo(56),
 
   /**
     A flag that controls if all rows have same static height or not. By default
@@ -132,7 +132,7 @@ export default Component.extend({
     @argument staticHeight
     @type boolean? (false)
   */
-  staticHeight: defaultTo(false),
+  staticHeight: defaultTo(true),
 
   /**
     The number of extra rows to render on either side of the table's viewport
@@ -148,7 +148,7 @@ export default Component.extend({
     @argument renderAll
     @type boolean? (false)
   */
-  renderAll: defaultTo(true),
+  renderAll: defaultTo(false),
 
   /**
     An action that is triggered when the table reaches the first row.
