@@ -148,7 +148,7 @@ export default Component.extend({
     @argument renderAll
     @type boolean? (false)
   */
-  renderAll: defaultTo(false),
+  renderAll: defaultTo(true),
 
   /**
     An action that is triggered when the table reaches the first row.
