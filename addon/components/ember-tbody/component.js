@@ -121,7 +121,7 @@ export default Component.extend({
     @argument estimateRowHeight
     @type number? (30)
   */
-  estimateRowHeight: defaultTo(56),
+  estimateRowHeight: defaultTo(30),
 
   /**
     A flag that controls if all rows have same static height or not. By default
@@ -132,7 +132,7 @@ export default Component.extend({
     @argument staticHeight
     @type boolean? (false)
   */
-  staticHeight: defaultTo(true),
+  staticHeight: defaultTo(false),
 
   /**
     The number of extra rows to render on either side of the table's viewport
@@ -140,7 +140,7 @@ export default Component.extend({
     @argument bufferSize
     @type number? (1)
   */
-  bufferSize: defaultTo(30),
+  bufferSize: defaultTo(1),
 
   /**
     A flag that tells the table to render all of its rows at once.
@@ -250,6 +250,12 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
+
+    console.log(`----- 'ember-table' add-on logs ------:`);
+    console.log(`>>> estimateRowHeight:`, this.get('VCConfig.estimateRowHeight') || this.get('estimateRowHeight'), typeof (this.get('VCConfig.estimateRowHeight') || this.get('estimateRowHeight')));
+    console.log(`>>> staticHeight:`, this.get('VCConfig.staticHeight') || this.get('staticHeight'), typeof (this.get('VCConfig.staticHeight') || this.get('staticHeight')));
+    console.log(`>>> bufferSize:`, this.get('VCConfig.bufferSize') || this.get('bufferSize'), typeof (this.get('VCConfig.bufferSize') || this.get('bufferSize')))
+    console.log(`---------------------------------------`);
 
     /**
       The map that contains row meta information for this table.

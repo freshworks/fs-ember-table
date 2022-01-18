@@ -1,12 +1,11 @@
 {{#if verticalCollection}}
 {{#vertical-collection wrappedRows
   containerSelector=_containerSelector
-
-  estimateHeight=estimateRowHeight
   key=key
-  staticHeight=staticHeight
-  bufferSize=bufferSize
-  renderAll=renderAll
+
+  estimateHeight=(or VCConfig.estimateRowHeight estimateRowHeight)
+  staticHeight=(or VCConfig.staticHeight staticHeight)
+  bufferSize=(or VCConfig.bufferSize bufferSize)
 
   firstReached=firstReached
   lastReached=lastReached
