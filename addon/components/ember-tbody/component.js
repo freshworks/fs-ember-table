@@ -251,12 +251,6 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    console.log(`----- 'ember-table' add-on logs ------:`);
-    console.log(`>>> estimateRowHeight:`, this.get('VCConfig.estimateRowHeight') || this.get('estimateRowHeight'), typeof (this.get('VCConfig.estimateRowHeight') || this.get('estimateRowHeight')));
-    console.log(`>>> staticHeight:`, this.get('VCConfig.staticHeight') || this.get('staticHeight'), typeof (this.get('VCConfig.staticHeight') || this.get('staticHeight')));
-    console.log(`>>> bufferSize:`, this.get('VCConfig.bufferSize') || this.get('bufferSize'), typeof (this.get('VCConfig.bufferSize') || this.get('bufferSize')))
-    console.log(`---------------------------------------`);
-
     /**
       The map that contains row meta information for this table.
     */
