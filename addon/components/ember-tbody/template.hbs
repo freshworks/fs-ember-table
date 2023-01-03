@@ -1,11 +1,11 @@
+{{#if verticalCollection}}
 {{#vertical-collection wrappedRows
   containerSelector=_containerSelector
-
-  estimateHeight=estimateRowHeight
   key=key
-  staticHeight=staticHeight
-  bufferSize=bufferSize
-  renderAll=renderAll
+
+  estimateHeight=(or VCConfig.estimateRowHeight estimateRowHeight)
+  staticHeight=(or VCConfig.staticHeight staticHeight)
+  bufferSize=(or VCConfig.bufferSize bufferSize)
 
   firstReached=firstReached
   lastReached=lastReached
@@ -45,3 +45,36 @@
 {{else if shouldYieldToInverse}}
   {{yield to='inverse'}}
 {{/vertical-collection}}
+{{else}}
+  {{#each wrappedRows as |rowValue| }}
+    {{#-ember-table-private/row-wrapper
+      rowValue=rowValue
+      columns=columns
+
+      columnMetaCache=columnMetaCache
+      rowMetaCache=rowMetaCache
+
+      canSelect=canSelect
+      rowSelectionMode=rowSelectionMode
+      checkboxSelectionMode=checkboxSelectionMode
+
+      as |api|
+    }}
+      {{#if hasBlock}}
+        {{yield (hash
+          rowValue=api.rowValue
+          rowMeta=api.rowMeta
+          cells=api.cells
+          rowSelectionMode=api.rowSelectionMode
+
+          row=(component "ember-tr" api=api)
+        )}}
+      {{else}}
+        {{ember-tr api=api}}
+      {{/if}}
+    {{/-ember-table-private/row-wrapper}}
+
+  {{else if shouldYieldToInverse}}
+    {{yield to='inverse'}}
+  {{/each}}
+{{/if}}

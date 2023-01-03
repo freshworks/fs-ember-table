@@ -49,6 +49,7 @@ export default Component.extend({
     @type object
   */
   api: null,
+  verticalCollection: true,
 
   unwrappedApi: or('api.api', 'api'),
 

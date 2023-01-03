@@ -54,10 +54,20 @@ export default Component.extend({
       this.element.style.minWidth = width;
       this.element.style.maxWidth = width;
 
+      const isRTL = document.querySelector('html').getAttribute('dir') === 'rtl';
+
       if (this.get('isFixedLeft')) {
-        this.element.style.left = `${Math.round(this.get('columnMeta.offsetLeft'))}px`;
-      } else if (this.get('isFixedRight')) {
-        this.element.style.right = `${Math.round(this.get('columnMeta.offsetRight'))}px`;
+				if (isRTL) {
+					this.element.style.right = `${Math.round(this.get('columnMeta.offsetLeft'))}px`;
+				} else {
+					this.element.style.left = `${Math.round(this.get('columnMeta.offsetLeft'))}px`;
+				}
+			} else if (this.get('isFixedRight')) {
+				if (isRTL) {
+					this.element.style.left = `${Math.round(this.get('columnMeta.offsetRight'))}px`;
+				} else {
+					this.element.style.right = `${Math.round(this.get('columnMeta.offsetRight'))}px`;
+				}
       }
 
       if (this.get('isSlack')) {
