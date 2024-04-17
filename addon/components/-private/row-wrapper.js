@@ -7,20 +7,20 @@ import { A as emberA } from '@ember/array';
 import { objectAt } from '../../-private/utils/array';
 import { dynamicAlias } from '../../-private/utils/computed';
 
-const CellWrapper = EmberObject.extend({
-  cellValue: dynamicAlias('rowValue', 'columnValue.valuePath'),
+// const CellWrapper = EmberObject.extend({
+//   cellValue: dynamicAlias('rowValue', 'columnValue.valuePath'),
 
-  cellMeta: computed('rowMeta', 'columnValue', function() {
-    let rowMeta = get(this, 'rowMeta');
-    let columnValue = get(this, 'columnValue');
+//   cellMeta: computed('rowMeta', 'columnValue', function() {
+//     let rowMeta = get(this, 'rowMeta');
+//     let columnValue = get(this, 'columnValue');
 
-    if (!rowMeta._cellMetaCache.has(columnValue)) {
-      rowMeta._cellMetaCache.set(columnValue, EmberObject.create());
-    }
+//     if (!rowMeta._cellMetaCache.has(columnValue)) {
+//       rowMeta._cellMetaCache.set(columnValue, EmberObject.create());
+//     }
 
-    return rowMeta._cellMetaCache.get(columnValue);
-  }),
-});
+//     return rowMeta._cellMetaCache.get(columnValue);
+//   }),
+// });
 
 const layout = hbs`{{yield api}}`;
 
@@ -86,7 +86,7 @@ export default Component.extend({
 
       if (numColumns !== _cells.length) {
         while (_cells.length < numColumns) {
-          _cells.pushObject(CellWrapper.create());
+          _cells.pushObject(EmberObject.create());
         }
 
         while (_cells.length > numColumns) {
