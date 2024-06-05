@@ -34,7 +34,7 @@
     "@html-next/vertical-collection": "2.0.0",
     "broccoli-string-replace": "^0.1.2",
     "css-element-queries": "^0.4.0",
-    "ember-classy-page-object": "^0.6.1",
+    "ember-classy-page-object": "0.8.0-beta",
     "ember-cli-babel": "^7.12.0",
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
@@ -98,7 +98,7 @@
   },
   "homepage": "https://Addepar.github.io/ember-table",
   "resolutions": {
-    "ember-cli-page-object": "1.15.1",
+    "ember-cli-page-object": "2.0.0",
     "prettier": "1.18.2"
   }
 }
