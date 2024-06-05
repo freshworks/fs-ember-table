@@ -43,7 +43,6 @@
     "ember-cli-version-checker": "^3.0.1",
     "ember-compatibility-helpers": "^1.2.0",
     "ember-raf-scheduler": "^0.2.0",
-    "ember-test-selectors": "^2.1.0",
     "hammerjs": "^2.0.8"
   },
   "devDependencies": {
@@ -99,7 +98,7 @@
   },
   "homepage": "https://Addepar.github.io/ember-table",
   "resolutions": {
-    "ember-cli-page-object": "2.0.0",
+    "ember-cli-page-object": "1.15.1",
     "prettier": "1.18.2"
   }
 }
