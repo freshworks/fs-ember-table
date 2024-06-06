@@ -17,7 +17,7 @@ module.exports = function(defaults) {
       ],
     },
     'ember-faker': {
-      enabled: true, // Always enable for dummy app because the docs examples use faker
+      enabled: false, // Always enable for dummy app because the docs examples use faker
     },
   });
 
